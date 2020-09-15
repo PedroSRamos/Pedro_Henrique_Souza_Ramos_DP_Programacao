@@ -1,46 +1,24 @@
-package br.edu.univas.main;
-import java.util.Scanner;
+package univas.edu.br;
 
 public class questao1 {
-	    private static Scanner sc;
-
-		public static void main(String[] args) {
-	        sc = new Scanner(System.in);
-	        int[] moradorA = new int[12];
-	        int[] moradorB = new int[12];
-	        int maiorA = 0, menorA = 9999, mediaA = 0;
-	        int maiorB = 0, menorB = 9999, mediaB = 0;
-
-	        System.out.println("informação do morador a");
-	        for (int i = 0; i < 12; i++) {
-	            System.out.println("digite valor dos mes: " + (i + 1));
-	            moradorA[i] = sc.nextInt();
-	            if (moradorA[i] > maiorA) {
-	                maiorA = moradorA[i];
-	            }
-	            if (moradorA[i] < menorA) {
-	                menorA = moradorA[i];
-	            }
-	            mediaA += moradorA[i];
-	        }
-	        System.out.println("Menor: " + menorA);
-	        System.out.println("Maior: " + maiorA);
-	        System.out.println("Média: " + (mediaA / 12));
-
-	    System.out.println("informação do morador B");
-	    for (int i = 0; i < 12; i++) {
-	        System.out.println("digite valor dos mes: " + (i + 1));
-	        moradorB[i] = sc.nextInt();
-	        if (moradorB[i] > maiorB) {
-	            maiorB = moradorB[i];
-	        }
-	        if (moradorB[i] < menorB) {
-	            menorB = moradorB[i];
-	        }
-	        mediaB += moradorB[i];
-	    }
-	    System.out.println("Menor: " + menorB);
-	    System.out.println("Maior: " + maiorB);
-	    System.out.println("Média: " + (mediaB / 12));
+	public static void main(String[] args) {
+		
+	}
+	public int[] parse(int[] notas) {
+		int loopcount = 0;
+		int [] array = new int [20];
+				for(int i = 0; i <20; i++) {
+					if(i % 2==0) {
+						array[i] = notas[loopcount];
+					} else {
+						if(array[i-1] > 60) {
+							array[i] =1;
+						}else {
+							array[i] = 0;
+						}
+						loopcount++;
+					}
+				}
+				return array;
 	}
 }
